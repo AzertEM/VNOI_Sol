@@ -15,10 +15,8 @@ int id(int x){
 }
 
 void recur(int a) {
-//    cout<<a;
     if (a>n/2) {
         dem[id(sum.X)][id(sum.Y)]++;
-//        cout<<sum.X<<" "<<sum.Y<<"\n";
         return;
     }
     recur(a+1);
@@ -30,13 +28,10 @@ void recur(int a) {
 }
 
 void recurB(int a) {
-//    cout<<a << "\n";
     if (a>n) {
         res+=dem[id(target.X - sum.X)][id(target.Y-sum.Y)];
-//        cout<<sum.X<<" "<<sum.Y<<"\n";
         return;
     }
-//    cout << a << "\n";
     recurB(a+1);
     sum.X+=vec[a].X;
     sum.Y+=vec[a].Y;
@@ -53,8 +48,6 @@ int main() {
     scanf("%ld%ld", &target.X, &target.Y);
     recur(1);
     sum.X=sum.Y=0;
-//    cout << n << "\n";
-//    return 0;
     recurB(n/2+1);
     printf("%d", res);
 }
